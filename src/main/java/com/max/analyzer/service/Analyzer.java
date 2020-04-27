@@ -45,9 +45,6 @@ public class Analyzer {
 
     private BigDecimal sumCollect(Collection<BigDecimal> collection) {
         return collection.stream().reduce(BigDecimal.ZERO, BigDecimal::add);
-        /*BigDecimal result = new BigDecimal(0);
-        collection.forEach(i -> result.add(i).setScale(2, BigDecimal.ROUND_HALF_UP));
-        return result;*/
     }
 
     private void sortAndWrite(Map<String, BigDecimal> map, Comparator<Map.Entry<String, BigDecimal>> comparator, String path) {
