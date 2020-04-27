@@ -19,7 +19,7 @@ public class Analyzer {
     private final Multimap<String, BigDecimal> officeStat = ArrayListMultimap.create();
 
     public Analyzer() {
-        Storage.getStorageList().stream().parallel().flatMap(i -> i).forEach(this::initializeMap);
+        Storage.getStorageList().stream().flatMap(i -> i).forEach(this::initializeMap);
     }
 
     public void writeSumAmountPerDay(String path) {
